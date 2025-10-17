@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConvertAI.life - Intelligent File Conversion</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A suite of free, modern, and intelligent tools to convert, process, and enhance your files. Merge PDFs, remove backgrounds from images, summarize documents with AI, and more." />
+    <meta name="keywords" content="ai tools, pdf converter, merge pdf, split pdf, remove background, image editor, document summarizer, free tools, online converter" />
+    <meta name="author" content="ConvertAI.life" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://convertai.life/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://convertai.life/" />
+    <meta property="og:title" content="ConvertAI.life - Free AI-Powered File Conversion Tools" />
+    <meta property="og:description" content="A suite of free, modern, and intelligent tools to convert, process, and enhance your files. Merge PDFs, remove backgrounds from images, summarize documents with AI, and more." />
+    <meta property="og:image" content="https://convertai.life/social-share-image.png" /> 
+    <meta property="og:site_name" content="ConvertAI.life" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://convertai.life/" />
+    <meta property="twitter:title" content="ConvertAI.life - Free AI-Powered File Conversion Tools" />
+    <meta property="twitter:description" content="A suite of free, modern, and intelligent tools to convert, process, and enhance your files. Merge PDFs, remove backgrounds from images, summarize documents with AI, and more." />
+    <meta property="twitter:image" content="https://convertai.life/social-share-image.png" />
+
+    <!-- Theme Color for Browsers -->
+    <meta name="theme-color" content="#6D28D9" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#6D28D9', // Violet-700
+                light: '#8B5CF6', // Violet-500
+                dark: '#5B21B6', // Violet-800
+              },
+              secondary: '#2563EB', // Blue-600
+              light: '#F3F4F6', // Gray-100
+              dark: {
+                bg: '#0F172A', // Slate-900
+                card: '#1E293B', // Slate-800
+                text: '#E2E8F0', // Slate-200
+                border: '#334155' // Slate-700
+              }
+            },
+            boxShadow: {
+              '3d': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              '3d-hover': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+              'inner-3d': 'inset 0 2px 4px 0 rgba(0,0,0,0.2)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-up': 'slideUp 0.5s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: 0 },
+                '100%': { transform: 'translateY(0)', opacity: 1 },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .dark body {
+        background-color: #0F172A;
+        background-image: radial-gradient(circle at top, #1E293B, #0F172A);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.24.0",
+    "pdf-lib": "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.esm.min.js",
+    "mammoth": "https://esm.sh/mammoth@1.7.0",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "pdfjs-dist": "https://esm.sh/pdfjs-dist@4.4.168",
+    "docx": "https://esm.sh/docx@8.5.0"
+  }
+}
+</script>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ConvertAI.life",
+  "url": "https://convertai.life/",
+  "description": "A suite of free, modern, and intelligent tools to convert, process, and enhance your files. Merge PDFs, remove backgrounds from images, summarize documents with AI, and more.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://convertai.life/",
+    "query-input": "required name=search_term_string"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "ConvertAI.life",
+    "url": "https://convertai.life/",
+    "logo": "https://convertai.life/logo.png"
+  }
+}
+</script>
+</head>
+  <body class="bg-light dark:bg-dark-bg antialiased transition-colors duration-300">
+    <div id="root"></div>
+  </body>
+</html>
