@@ -1,3 +1,5 @@
+// FIX: Import React to resolve 'React' namespace errors.
+import React from 'react';
 
 export interface Tool {
   title: string;

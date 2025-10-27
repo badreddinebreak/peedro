@@ -19,7 +19,8 @@ const ImageToPdfToolPage: React.FC = () => {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
-      const newFiles = Array.from(event.target.files).filter(file => file.type.startsWith('image/'));
+      // FIX: Explicitly type 'file' as File to resolve property 'type' does not exist error.
+      const newFiles = Array.from(event.target.files).filter((file: File) => file.type.startsWith('image/'));
       if (newFiles.length !== event.target.files.length) {
         setError('Only image files are accepted.');
       } else {
@@ -90,7 +91,8 @@ const ImageToPdfToolPage: React.FC = () => {
     event.stopPropagation();
     setIsDragOver(false);
     if (event.dataTransfer.files) {
-        const newFiles = Array.from(event.dataTransfer.files).filter(file => file.type.startsWith('image/'));
+        // FIX: Explicitly type 'file' as File to resolve property 'type' does not exist error.
+        const newFiles = Array.from(event.dataTransfer.files).filter((file: File) => file.type.startsWith('image/'));
         if (newFiles.length !== event.dataTransfer.files.length) {
             setError('Only image files (JPG, PNG) are accepted.');
         } else {

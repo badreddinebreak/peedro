@@ -1,3 +1,4 @@
+
 import type { Tool } from '../types';
 import MergeIcon from '../components/icons/MergeIcon';
 import SplitIcon from '../components/icons/SplitIcon';
