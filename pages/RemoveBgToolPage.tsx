@@ -94,7 +94,7 @@ const RemoveBgToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Free AI Background Remover | Remove BG from Images Online"
+        title="AI Background Remover | SmartDocs.AI"
         description="Automatically remove the background from any image with a single click. Our AI tool provides a transparent background for your photos, free and fast."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

@@ -100,7 +100,7 @@ const MergePdfToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Merge PDF Files Free Online | Combine Multiple PDFs"
+        title="Merge PDF Files | SmartDocs.AI"
         description="Easily combine multiple PDF documents into one single file. Our free PDF merger is fast, secure, and runs in your browser."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

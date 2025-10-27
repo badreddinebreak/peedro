@@ -5,8 +5,8 @@ const PrivacyPolicyPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Privacy Policy | ConvertAI.life"
-        description="Read the privacy policy for ConvertAI.life. We prioritize your security by processing files in-browser or deleting them immediately after AI processing."
+        title="Privacy Policy | SmartDocs.AI"
+        description="Read the privacy policy for SmartDocs.AI. We prioritize your security by processing files in-browser or deleting them immediately after AI processing."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">
         <div className="text-center mb-12">
@@ -20,7 +20,7 @@ const PrivacyPolicyPage: React.FC = () => {
 
         <div className="bg-white dark:bg-dark-card p-8 rounded-xl shadow-3d border border-gray-200 dark:border-dark-border space-y-6 prose prose-lg dark:prose-invert max-w-none">
           <p>
-            Welcome to ConvertAI.life. Your privacy is critically important to us. This Privacy Policy document outlines the types of information that is handled by our website and how we use it. Our core principle is to collect as little information as possible and to be transparent about our processes.
+            Welcome to SmartDocs.AI. Your privacy is critically important to us. This Privacy Policy document outlines the types of information that is handled by our website and how we use it. Our core principle is to collect as little information as possible and to be transparent about our processes.
           </p>
 
           <h2 className="font-display">File Handling and Security</h2>
@@ -43,7 +43,7 @@ const PrivacyPolicyPage: React.FC = () => {
           
           <h2 className="font-display">Information We Collect</h2>
           <p>
-              ConvertAI.life does not require you to create an account or provide any personally identifiable information (PII) to use our tools. We do not collect your name, email address, or any other personal details.
+              SmartDocs.AI does not require you to create an account or provide any personally identifiable information (PII) to use our tools. We do not collect your name, email address, or any other personal details.
           </p>
           
           <h2 className="font-display">Cookies and Analytics</h2>

@@ -115,7 +115,7 @@ const ImageToPdfToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Image to PDF Converter | Convert JPG, PNG to PDF Free"
+        title="Image to PDF Converter | SmartDocs.AI"
         description="Convert your images (JPG, PNG) into a single PDF file. Perfect for creating documents from photos and scans."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

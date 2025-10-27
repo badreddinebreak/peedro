@@ -64,7 +64,7 @@ const ConvertDocxToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Convert DOCX to Text Free | Extract Text from Word"
+        title="DOCX to Text Converter | SmartDocs.AI"
         description="Easily extract plain text from Microsoft Word (.docx) documents. Free, fast, and secure online converter."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

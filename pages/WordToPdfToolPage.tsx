@@ -108,7 +108,7 @@ const WordToPdfToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Convert Word to PDF Free Online | DOCX to PDF"
+        title="Word to PDF Converter | SmartDocs.AI"
         description="Convert your Microsoft Word documents (.docx) to high-quality PDF files for free. Fast, secure, and maintains formatting."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">
