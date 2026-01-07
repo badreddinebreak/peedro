@@ -27,8 +27,8 @@ const ContactPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Contact Us | SmartDocs.AI"
-        description="Have a question, feedback, or suggestion? Get in touch with the SmartDocs.AI team. We'd love to hear from you."
+        title="Contact Us | convertai.life"
+        description="Have a question, feedback, or suggestion? Get in touch with the convertai.life team. We'd love to hear from you."
       />
       <div className="max-w-2xl mx-auto animate-fade-in">
         <div className="text-center mb-12">

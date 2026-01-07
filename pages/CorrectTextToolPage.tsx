@@ -83,7 +83,7 @@ const CorrectTextToolPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="AI Grammar & Spell Checker | SmartDocs.AI"
+        title="AI Grammar & Spell Checker | convertai.life"
         description="Improve your writing by fixing spelling and grammar mistakes automatically. Upload a text file and let our AI text corrector do the work."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

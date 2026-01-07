@@ -20,7 +20,9 @@ const WordToPdfToolPage: React.FC = () => {
     const allowedTypes = [
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     ];
-    if (!allowedTypes.includes(selectedFile.type)) {
+    const isDocx = selectedFile.name.toLowerCase().endsWith('.docx');
+
+    if (!allowedTypes.includes(selectedFile.type) && !isDocx) {
       setError("Invalid file type. Please upload a .docx file.");
       setStatus(ProcessStatus.ERROR);
       return;
@@ -100,8 +102,12 @@ const WordToPdfToolPage: React.FC = () => {
 
       setStatus(ProcessStatus.SUCCESS);
     } catch (err: any) {
-      console.error(err);
-      setError(err.message || 'An error occurred while converting the DOCX file.');
+      console.error("Conversion error:", err);
+      let errorMessage = err.message || 'An error occurred while converting the DOCX file.';
+      if (errorMessage.includes("Can't find end of central directory") || errorMessage.includes("zip file") || errorMessage.includes("corrupted")) {
+          errorMessage = "The file does not appear to be a valid .docx file. It might be a legacy .doc file or corrupted. Please open it in Word and 'Save As' > 'Word Document (*.docx)'.";
+      }
+      setError(errorMessage);
       setStatus(ProcessStatus.ERROR);
     }
   };
@@ -109,7 +115,7 @@ const WordToPdfToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Word to PDF Converter | SmartDocs.AI"
+        title="Word to PDF Converter | convertai.life"
         description="Convert your Microsoft Word documents (.docx) to high-quality PDF files for free. Fast, secure, and maintains formatting."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

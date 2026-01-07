@@ -81,7 +81,7 @@ const PdfToWordToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="PDF to Word Converter | SmartDocs.AI"
+        title="PDF to Word Converter | convertai.life"
         description="Convert your PDF files into editable Microsoft Word (.docx) documents. Our tool extracts text for easy editing."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

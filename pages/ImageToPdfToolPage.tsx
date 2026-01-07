@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { PDFDocument, rgb } from 'pdf-lib';
 import { ProcessStatus } from '../types';
@@ -117,7 +118,7 @@ const ImageToPdfToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Image to PDF Converter | SmartDocs.AI"
+        title="Image to PDF Converter | convertai.life"
         description="Convert your images (JPG, PNG) into a single PDF file. Perfect for creating documents from photos and scans."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

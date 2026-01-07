@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="SmartDocs.AI | Free AI-Powered Document Processing Tools"
+        title="convertai.life | Free AI-Powered Document Processing Tools"
         description="A suite of free, modern, and intelligent tools to convert, process, and enhance your files. Merge PDFs, remove backgrounds from images, summarize documents with AI, and more."
       />
       <div className="animate-fade-in">

@@ -98,7 +98,7 @@ const PdfToJpgToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="PDF to JPG Converter | SmartDocs.AI"
+        title="PDF to JPG Converter | convertai.life"
         description="Convert each page of your PDF file into a high-quality JPG image. Free, fast, and no watermarks."
       />
       <div className="max-w-6xl mx-auto animate-fade-in">

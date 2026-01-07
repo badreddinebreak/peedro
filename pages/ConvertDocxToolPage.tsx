@@ -16,11 +16,13 @@ const ConvertDocxToolPage: React.FC = () => {
   const handleFileSelect = (selectedFile: File) => {
     resetState();
     const allowedTypes = [
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        'application/msword'
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     ];
-    if (!allowedTypes.includes(selectedFile.type)) {
-        setError("Invalid file type. Please upload a .docx file.");
+    // Check extension as fallback because some browsers might not detect mime type correctly for docx
+    const isDocx = selectedFile.name.toLowerCase().endsWith('.docx');
+    
+    if (!allowedTypes.includes(selectedFile.type) && !isDocx) {
+        setError("Invalid file type. Please upload a .docx file. (Old .doc files are not supported)");
         setStatus(ProcessStatus.ERROR);
         return;
     }
@@ -57,7 +59,13 @@ const ConvertDocxToolPage: React.FC = () => {
 
         setStatus(ProcessStatus.SUCCESS);
     } catch (err: any) {
-        setError(err.message || 'An error occurred while converting the DOCX file.');
+        console.error("Conversion error:", err);
+        let errorMessage = err.message || 'An error occurred while converting the DOCX file.';
+        // Handle specific Mammoth/JSZip errors for invalid files
+        if (errorMessage.includes("Can't find end of central directory") || errorMessage.includes("zip file") || errorMessage.includes("corrupted")) {
+            errorMessage = "The file does not appear to be a valid .docx file. It might be a legacy .doc file or corrupted. Please open it in Word and 'Save As' > 'Word Document (*.docx)'.";
+        }
+        setError(errorMessage);
         setStatus(ProcessStatus.ERROR);
     }
   };
@@ -65,7 +73,7 @@ const ConvertDocxToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="DOCX to Text Converter | SmartDocs.AI"
+        title="DOCX to Text Converter | convertai.life"
         description="Easily extract plain text from Microsoft Word (.docx) documents. Free, fast, and secure online converter."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">
@@ -76,7 +84,7 @@ const ConvertDocxToolPage: React.FC = () => {
 
         <div className="bg-white dark:bg-dark-card p-8 rounded-xl shadow-lg border border-gray-200 dark:border-dark-border">
           {status !== ProcessStatus.SUCCESS && !file && (
-            <FileUpload onFileSelect={handleFileSelect} acceptedFileTypes=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" label="DOCX files only" />
+            <FileUpload onFileSelect={handleFileSelect} acceptedFileTypes=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" label="DOCX files only (not .doc)" />
           )}
           
           {error && <Alert type="error" message={error} />}

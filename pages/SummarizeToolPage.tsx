@@ -83,7 +83,7 @@ const SummarizeToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="AI Document Summarizer | SmartDocs.AI"
+        title="AI Document Summarizer | convertai.life"
         description="Upload a text file (.txt) to get a quick, concise summary using artificial intelligence. Our free online tool makes understanding long documents easy."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

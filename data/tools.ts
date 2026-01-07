@@ -15,6 +15,7 @@ import WordToPdfIcon from '../components/icons/WordToPdfIcon';
 import PdfToWordIcon from '../components/icons/PdfToWordIcon';
 import PdfToExcelIcon from '../components/icons/PdfToExcelIcon';
 import ExcelToPdfIcon from '../components/icons/ExcelToPdfIcon';
+import QrIcon from '../components/icons/QrIcon';
 
 export const tools: Tool[] = [
   // AI Tools
@@ -42,7 +43,15 @@ export const tools: Tool[] = [
     category: 'AI',
     color: '#10B981',
   },
-  // Image Tools
+  // Image & Utility Tools
+  {
+    title: 'QR Code Generator',
+    description: 'Generate custom QR codes for links or information.',
+    Icon: QrIcon,
+    path: '/qr-generator',
+    category: 'Image',
+    color: '#7C3AED',
+  },
   {
     title: 'Remove Background',
     description: 'Automatically remove the background from an image.',

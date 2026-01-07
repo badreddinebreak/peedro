@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { PDFDocument } from 'pdf-lib';
 import { ProcessStatus } from '../types';
@@ -102,7 +103,7 @@ const MergePdfToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Merge PDF Files | SmartDocs.AI"
+        title="Merge PDF Files | convertai.life"
         description="Easily combine multiple PDF documents into one single file. Our free PDF merger is fast, secure, and runs in your browser."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} SmartDocs.AI. All Rights Reserved.
+            &copy; {new Date().getFullYear()} convertai.life. All Rights Reserved.
           </p>
           <div className="flex space-x-4">
             <Link to="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-light transition-colors">About</Link>

@@ -90,7 +90,7 @@ const SplitPdfToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="Split PDF | SmartDocs.AI"
+        title="Split PDF | convertai.life"
         description="Extract a range of pages or split a large PDF into multiple smaller files. A free and easy-to-use online PDF splitter."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

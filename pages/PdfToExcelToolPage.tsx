@@ -106,7 +106,7 @@ const PdfToExcelToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="PDF to Excel Converter | SmartDocs.AI"
+        title="PDF to Excel Converter | convertai.life"
         description="Use AI to extract tables from your PDF documents and convert them into a structured CSV file, compatible with Excel and Google Sheets."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

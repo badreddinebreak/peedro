@@ -28,8 +28,8 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="text-2xl font-display font-bold">
-            <span className="text-gray-900 dark:text-white">SmartDocs</span>
-            <span className="text-primary-light">.AI</span>
+            <span className="text-gray-900 dark:text-white">convertai</span>
+            <span className="text-primary-light">.life</span>
           </Link>
           <div className="flex items-center space-x-4">
             <nav className="hidden md:flex items-center space-x-6">

@@ -17,6 +17,7 @@ import PdfToJpgToolPage from './pages/PdfToJpgToolPage';
 import WordToPdfToolPage from './pages/WordToPdfToolPage';
 import PdfToWordToolPage from './pages/PdfToWordToolPage';
 import PdfToExcelToolPage from './pages/PdfToExcelToolPage';
+import QrToolPage from './pages/QrToolPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
@@ -47,6 +48,7 @@ const componentMap: Record<string, React.ComponentType> = {
   '/pdf-to-excel': PdfToExcelToolPage,
   '/word-to-pdf': WordToPdfToolPage,
   '/docx-to-text': ConvertDocxToolPage,
+  '/qr-generator': QrToolPage,
 };
 
 

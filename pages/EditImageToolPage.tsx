@@ -100,7 +100,7 @@ const EditImageToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="AI Image Editor | SmartDocs.AI"
+        title="AI Image Editor | convertai.life"
         description="Describe the edits you want, and our AI will do the magic. Edit images online by adding objects, changing styles, and more with simple text commands."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">

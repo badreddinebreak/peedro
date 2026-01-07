@@ -96,7 +96,7 @@ const TranslateToolPage: React.FC = () => {
   return (
     <>
       <SEO 
-        title="AI Document Translator | SmartDocs.AI"
+        title="AI Document Translator | convertai.life"
         description="Translate your text documents into multiple languages like Spanish, French, German, and more with our free AI-powered translation tool."
       />
       <div className="max-w-4xl mx-auto animate-fade-in">
