@@ -1,27 +1,20 @@
 
 import { GoogleGenAI, Modality } from "@google/genai";
 
-// The API key must be obtained exclusively from the environment variable process.env.API_KEY.
-// This is replaced by Vite at build time via the define config.
+// Ensure the API key is set in the environment variables
 const apiKey = process.env.API_KEY;
-
 if (!apiKey) {
-  // We log a warning but don't throw immediately to allow the app to load, 
-  // error will occur when user tries to use an AI tool.
-  console.warn("API_KEY environment variable not set. AI features will not work.");
+  throw new Error("API_KEY environment variable not set.");
 }
 
-// Initialize AI only if key exists to prevent immediate crash on load
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+const ai = new GoogleGenAI({ apiKey });
 
 export async function summarizeText(text: string): Promise<string> {
-  if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your environment.");
-  
   if (!text.trim()) {
     throw new Error("Input text cannot be empty.");
   }
 
-  const model = 'gemini-3-flash-preview';
+  const model = 'gemini-2.5-flash';
   const prompt = `Please provide a concise summary of the following document. Focus on the key points and main ideas. The summary should be easy to understand for a general audience.
 
 Document:
@@ -51,6 +44,7 @@ Summary:`;
     return summary.trim();
   } catch (error: any) {
     console.error("Error calling Gemini API:", error);
+    // Provide a more user-friendly error message
     if (error.message.includes('API key not valid')) {
         throw new Error("The provided API key is invalid. Please check your configuration.");
     }
@@ -59,8 +53,6 @@ Summary:`;
 }
 
 export async function translateText(text: string, targetLanguage: string): Promise<string> {
-  if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your environment.");
-  
   if (!text.trim()) {
     throw new Error("Input text cannot be empty.");
   }
@@ -68,7 +60,7 @@ export async function translateText(text: string, targetLanguage: string): Promi
     throw new Error("Target language must be specified.");
   }
 
-  const model = 'gemini-3-flash-preview';
+  const model = 'gemini-2.5-flash';
   const prompt = `Translate the following text to ${targetLanguage}. Return only the translated text, without any additional comments or explanations.
 
   Text:
@@ -101,13 +93,11 @@ export async function translateText(text: string, targetLanguage: string): Promi
 }
 
 export async function correctText(text: string): Promise<string> {
-    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your environment.");
-
     if (!text.trim()) {
         throw new Error("Input text cannot be empty.");
     }
 
-    const model = 'gemini-3-flash-preview';
+    const model = 'gemini-2.5-flash';
     const prompt = `Please correct the spelling and grammar of the following text. Return only the corrected text, without any explanations or comments about the changes.
 
     Original Text:
@@ -140,8 +130,6 @@ export async function correctText(text: string): Promise<string> {
 }
 
 export async function removeBackground(base64ImageData: string, mimeType: string): Promise<string> {
-    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your environment.");
-    
     if (!base64ImageData) {
         throw new Error("Image data cannot be empty.");
     }
@@ -192,8 +180,6 @@ export async function removeBackground(base64ImageData: string, mimeType: string
 }
 
 export async function editImage(base64ImageData: string, mimeType: string, prompt: string): Promise<string> {
-    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your environment.");
-
     if (!base64ImageData) {
         throw new Error("Image data cannot be empty.");
     }
@@ -247,8 +233,6 @@ export async function editImage(base64ImageData: string, mimeType: string, promp
 }
 
 export async function extractCsvFromImage(base64ImageData: string, mimeType: string): Promise<string> {
-    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your environment.");
-
     if (!base64ImageData) {
         throw new Error("Image data cannot be empty.");
     }
@@ -272,7 +256,7 @@ export async function extractCsvFromImage(base64ImageData: string, mimeType: str
 
     try {
         const response = await ai.models.generateContent({
-            model: 'gemini-3-flash-preview',
+            model: 'gemini-2.5-flash',
             contents: { parts: [imagePart, textPart] },
         });
 
