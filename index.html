@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,107 +30,54 @@
     <!-- Theme Color for Browsers -->
     <meta name="theme-color" content="#0891B2" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Poppins', 'sans-serif'],
-            },
-            colors: {
-              primary: {
-                DEFAULT: '#0891B2', // Cyan-600
-                light: '#06B6D4', // Cyan-500
-                dark: '#0E7490',  // Cyan-700
-              },
-              secondary: '#1D4ED8', // Blue-700
-              light: '#F0F9FF', // Sky-50
-              dark: {
-                bg: '#0C111D',   // A darker slate/navy
-                card: '#161B29', // Slightly lighter card bg
-                text: '#E2E8F0', // Slate-200
-                border: '#334155' // Slate-700
-              }
-            },
-            boxShadow: {
-              '3d': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-              '3d-hover': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-              'inner-3d': 'inset 0 2px 4px 0 rgba(0,0,0,0.2)',
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.5s ease-out forwards',
-              'slide-up': 'slideUp 0.5s ease-out forwards',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: 0 },
-                '100%': { opacity: 1 },
-              },
-              slideUp: {
-                '0%': { transform: 'translateY(20px)', opacity: 0 },
-                '100%': { transform: 'translateY(0)', opacity: 1 },
-              },
-            }
-          }
-        }
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "convertai.life",
+      "url": "https://convertai.life/",
+      "description": "A suite of free, modern, and intelligent tools to convert, process, and enhance your files. Merge PDFs, remove backgrounds from images, summarize documents with AI, and more.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://convertai.life/",
+        "query-input": "required name=search_term_string"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "convertai.life",
+        "url": "https://convertai.life/",
+        "logo": "https://convertai.life/logo.png"
       }
+    }
     </script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      .dark body {
-        background-color: #0C111D;
-        background-image: radial-gradient(circle at top, #161B29, #0C111D);
-      }
-    </style>
   <script type="importmap">
 {
   "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.24.0",
-    "pdf-lib": "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.esm.min.js",
-    "mammoth": "https://esm.sh/mammoth@1.7.0",
-    "jspdf": "https://esm.sh/jspdf@2.5.1",
-    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
-    "pdfjs-dist": "https://esm.sh/pdfjs-dist@4.4.168",
-    "docx": "https://esm.sh/docx@8.5.0",
-    "qrcode": "https://esm.sh/qrcode@1.5.3"
-  }
-}
-</script>
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "convertai.life",
-  "url": "https://convertai.life/",
-  "description": "A suite of free, modern, and intelligent tools to convert, process, and enhance your files. Merge PDFs, remove backgrounds from images, summarize documents with AI, and more.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://convertai.life/",
-    "query-input": "required name=search_term_string"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "convertai.life",
-    "url": "https://convertai.life/",
-    "logo": "https://convertai.life/logo.png"
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "jspdf": "https://esm.sh/jspdf@^4.0.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "docx": "https://esm.sh/docx@^9.5.1",
+    "mammoth": "https://esm.sh/mammoth@^1.11.0",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+    "pdfjs-dist": "https://esm.sh/pdfjs-dist@^5.4.530",
+    "pdf-lib": "https://esm.sh/pdf-lib@^1.17.1",
+    "qrcode": "https://esm.sh/qrcode@^1.5.4"
   }
 }
 </script>
 </head>
   <body class="bg-light dark:bg-dark-bg antialiased transition-colors duration-300">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

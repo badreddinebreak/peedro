@@ -2,14 +2,17 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 
 // Ensure the API key is set in the environment variables
+// Vite exposes env vars via define in vite.config.ts mapping to process.env.API_KEY
 const apiKey = process.env.API_KEY;
+
 if (!apiKey) {
-  throw new Error("API_KEY environment variable not set.");
+  console.warn("API_KEY environment variable not set. AI features will not work.");
 }
 
-const ai = new GoogleGenAI({ apiKey });
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export async function summarizeText(text: string): Promise<string> {
+  if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your Vercel settings.");
   if (!text.trim()) {
     throw new Error("Input text cannot be empty.");
   }
@@ -44,7 +47,6 @@ Summary:`;
     return summary.trim();
   } catch (error: any) {
     console.error("Error calling Gemini API:", error);
-    // Provide a more user-friendly error message
     if (error.message.includes('API key not valid')) {
         throw new Error("The provided API key is invalid. Please check your configuration.");
     }
@@ -53,6 +55,7 @@ Summary:`;
 }
 
 export async function translateText(text: string, targetLanguage: string): Promise<string> {
+  if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your Vercel settings.");
   if (!text.trim()) {
     throw new Error("Input text cannot be empty.");
   }
@@ -93,6 +96,7 @@ export async function translateText(text: string, targetLanguage: string): Promi
 }
 
 export async function correctText(text: string): Promise<string> {
+    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your Vercel settings.");
     if (!text.trim()) {
         throw new Error("Input text cannot be empty.");
     }
@@ -130,6 +134,7 @@ export async function correctText(text: string): Promise<string> {
 }
 
 export async function removeBackground(base64ImageData: string, mimeType: string): Promise<string> {
+    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your Vercel settings.");
     if (!base64ImageData) {
         throw new Error("Image data cannot be empty.");
     }
@@ -180,6 +185,7 @@ export async function removeBackground(base64ImageData: string, mimeType: string
 }
 
 export async function editImage(base64ImageData: string, mimeType: string, prompt: string): Promise<string> {
+    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your Vercel settings.");
     if (!base64ImageData) {
         throw new Error("Image data cannot be empty.");
     }
@@ -233,6 +239,7 @@ export async function editImage(base64ImageData: string, mimeType: string, promp
 }
 
 export async function extractCsvFromImage(base64ImageData: string, mimeType: string): Promise<string> {
+    if (!ai) throw new Error("API Key is missing. Please configure VITE_API_KEY in your Vercel settings.");
     if (!base64ImageData) {
         throw new Error("Image data cannot be empty.");
     }
